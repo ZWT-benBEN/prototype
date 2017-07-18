@@ -1,0 +1,182 @@
+{
+    "res": {
+        "modules/html/chatroom/index.html": {
+            "uri": "/static/html/chatroom/index.html",
+            "type": "html"
+        },
+        "modules/html/expert/index.html": {
+            "uri": "/static/html/expert/index.html",
+            "type": "html"
+        },
+        "modules/html/home/home2.html": {
+            "uri": "/static/html/home/home2.html",
+            "type": "html"
+        },
+        "modules/html/index/index.html": {
+            "uri": "/static/html/index/index.html",
+            "type": "html"
+        },
+        "modules/html/mine/commit_suc.html": {
+            "uri": "/static/html/mine/commit_suc.html",
+            "type": "html"
+        },
+        "modules/html/mine/complaint.html": {
+            "uri": "/static/html/mine/complaint.html",
+            "type": "html"
+        },
+        "modules/html/mine/mine.html": {
+            "uri": "/static/html/mine/mine.html",
+            "type": "html"
+        },
+        "modules/html/other/index.html": {
+            "uri": "/static/html/other/index.html",
+            "type": "html"
+        },
+        "modules/html/other/yuyue_success.html": {
+            "uri": "/static/html/other/yuyue_success.html",
+            "type": "html"
+        },
+        "modules/html/other/yuyue.html": {
+            "uri": "/static/html/other/yuyue.html",
+            "type": "html"
+        },
+        "modules/css/common.scss": {
+            "uri": "/prototype/fis3f7/static/css/common.css",
+            "type": "css",
+            "pkg": "p0"
+        },
+        "lib/mod.js": {
+            "uri": "/prototype/fis3f7/static/lib/mod.js",
+            "type": "js"
+        },
+        "modules/js/app.js": {
+            "uri": "/prototype/fis3f7/static/js/app.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "modules/js/app"
+            },
+            "deps": [
+                "node_modules/framework7/dist/js/framework7.js"
+            ],
+            "pkg": "p1"
+        },
+        "modules/images/tree.png": {
+            "uri": "/prototype/fis3f7/static/images/tree.png",
+            "type": "png"
+        },
+        "modules/fonts/iconfont.eot": {
+            "uri": "/prototype/fis3f7/static/fonts/iconfont.eot",
+            "type": "eot"
+        },
+        "modules/fonts/iconfont.woff": {
+            "uri": "/prototype/fis3f7/static/fonts/iconfont.woff",
+            "type": "woff"
+        },
+        "modules/fonts/iconfont.ttf": {
+            "uri": "/prototype/fis3f7/static/fonts/iconfont.ttf",
+            "type": "ttf"
+        },
+        "modules/fonts/iconfont.svg": {
+            "uri": "/prototype/fis3f7/static/fonts/iconfont.svg",
+            "type": "svg"
+        },
+        "node_modules/framework7/dist/img/i-f7-ios.png": {
+            "uri": "/prototype/fis3f7/static/node_modules/framework7/dist/img/i-f7-ios.png",
+            "type": "png"
+        },
+        "modules/images/tool_xun2.png": {
+            "uri": "/prototype/fis3f7/static/images/tool_xun2.png",
+            "type": "png"
+        },
+        "modules/images/tool_xuan2.png": {
+            "uri": "/prototype/fis3f7/static/images/tool_xuan2.png",
+            "type": "png"
+        },
+        "modules/images/tool_zhuan2.png": {
+            "uri": "/prototype/fis3f7/static/images/tool_zhuan2.png",
+            "type": "png"
+        },
+        "modules/images/tool_wo2.png": {
+            "uri": "/prototype/fis3f7/static/images/tool_wo2.png",
+            "type": "png"
+        },
+        "modules/images/tool_xun1.png": {
+            "uri": "/prototype/fis3f7/static/images/tool_xun1.png",
+            "type": "png"
+        },
+        "modules/images/tool_xuan1.png": {
+            "uri": "/prototype/fis3f7/static/images/tool_xuan1.png",
+            "type": "png"
+        },
+        "modules/images/tool_zhuan1.png": {
+            "uri": "/prototype/fis3f7/static/images/tool_zhuan1.png",
+            "type": "png"
+        },
+        "modules/images/tool_wo1.png": {
+            "uri": "/prototype/fis3f7/static/images/tool_wo1.png",
+            "type": "png"
+        },
+        "modules/images/adv_telbg.png": {
+            "uri": "/prototype/fis3f7/static/images/adv_telbg.png",
+            "type": "png"
+        },
+        "modules/images/bg.png": {
+            "uri": "/prototype/fis3f7/static/images/bg.png",
+            "type": "png"
+        },
+        "modules/images/adv_success.png": {
+            "uri": "/prototype/fis3f7/static/images/adv_success.png",
+            "type": "png"
+        },
+        "node_modules/framework7/dist/js/framework7.js": {
+            "uri": "/prototype/fis3f7/static/node_modules/framework7/dist/js/framework7.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/framework7/dist/js/framework7"
+            },
+            "deps": [
+                "node_modules/process/browser.js"
+            ],
+            "pkg": "p2"
+        },
+        "node_modules/framework7/dist/js/framework7.js.map": {
+            "uri": "/static/node_modules/framework7/dist/js/framework7.js.map",
+            "type": "map"
+        },
+        "node_modules/process/browser.js": {
+            "uri": "/prototype/fis3f7/static/node_modules/process/browser.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/process/browser"
+            },
+            "pkg": "p2"
+        }
+    },
+    "pkg": {
+        "p0": {
+            "uri": "/prototype/fis3f7/pkg/common.css",
+            "type": "css",
+            "has": [
+                "modules/css/common.scss"
+            ]
+        },
+        "p1": {
+            "uri": "/prototype/fis3f7/pkg/modules.js",
+            "type": "js",
+            "has": [
+                "modules/js/app.js"
+            ],
+            "deps": [
+                "node_modules/framework7/dist/js/framework7.js"
+            ]
+        },
+        "p2": {
+            "uri": "/prototype/fis3f7/pkg/components.js",
+            "type": "js",
+            "has": [
+                "node_modules/process/browser.js",
+                "node_modules/framework7/dist/js/framework7.js"
+            ]
+        }
+    }
+}
