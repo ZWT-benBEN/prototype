@@ -15,8 +15,7 @@ define('modules/js/app', function(require, exports, module) {
   var set = {
     init: function() {
       myApp = framework.init({
-        pushState: true,
-        fastClicks:false
+        pushState: true
       });
       // Add view
       var mainView = myApp.addView('.view-main', {
@@ -129,23 +128,29 @@ define('modules/js/app', function(require, exports, module) {
             })
       });
       myApp.onPageInit('home_1',function(page) {
-        console.log('sb')
             $$('.mytabinner').on('click',function(){
                 $$('.mytabinner').removeClass('active');
                 $$(this).addClass('active')
-                var t = $$(this).index();
-                $$('.tabContent').find('.tab_con').each(function(j){
-                    if(t === j) {
-                        $$(this).show();
-                    } else {
-                        $$(this).hide();
-                    }
-                })
             })
             $$('.tab_con_tel .body li').on('click',function(){
                 $$('.tab_con_tel .body li').removeClass('active');
                 $$(this).addClass('active')
             })
+      });
+      var context = '';
+      myApp.onPageInit('home',function(page) {
+           var len = $$('.consultationBox').find('.cardWarp').length;
+          $$('.consultationBox').find('.cardWarp').on('click', function () {
+            $$('.consultationBox').find('.cardWarp').removeClass('active');
+            $$(this).addClass('active');
+            context = $$(this).text();
+          });
+           $$('.sure').on('click',function(){
+            // context = $$('.cardWarp.active').text();
+            if(context) {
+              $$('.zixunspan').text(context)
+            }
+           })
       });
        myApp.onPageInit('chatroom',function(page) {
             var chatBoxofhei = $$('.chatbox')[0].offsetHeight;

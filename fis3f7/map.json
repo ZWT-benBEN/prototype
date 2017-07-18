@@ -1,19 +1,19 @@
 {
     "res": {
-        "modules/html/chatroom/index.html": {
-            "uri": "/static/html/chatroom/index.html",
-            "type": "html"
-        },
-        "modules/html/expert/index.html": {
-            "uri": "/static/html/expert/index.html",
+        "modules/html/index/index.html": {
+            "uri": "/static/html/index/index.html",
             "type": "html"
         },
         "modules/html/home/home2.html": {
             "uri": "/static/html/home/home2.html",
             "type": "html"
         },
-        "modules/html/index/index.html": {
-            "uri": "/static/html/index/index.html",
+        "modules/html/chatroom/index.html": {
+            "uri": "/static/html/chatroom/index.html",
+            "type": "html"
+        },
+        "modules/html/expert/index.html": {
+            "uri": "/static/html/expert/index.html",
             "type": "html"
         },
         "modules/html/mine/commit_suc.html": {
