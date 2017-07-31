@@ -1,0 +1,191 @@
+{
+    "res": {
+        "modules/html/ggb/ggbDay.html": {
+            "uri": "/static/html/ggb/ggbDay.html",
+            "type": "html"
+        },
+        "modules/html/ggb/ggbMouth.html": {
+            "uri": "/static/html/ggb/ggbMouth.html",
+            "type": "html"
+        },
+        "modules/html/ggb/ggbYear.html": {
+            "uri": "/static/html/ggb/ggbYear.html",
+            "type": "html"
+        },
+        "modules/html/hyzx/hyzx.html": {
+            "uri": "/static/html/hyzx/hyzx.html",
+            "type": "html"
+        },
+        "modules/html/index/index.html": {
+            "uri": "/static/html/index/index.html",
+            "type": "html"
+        },
+        "modules/html/scb/scb.html": {
+            "uri": "/static/html/scb/scb.html",
+            "type": "html"
+        },
+        "modules/html/ysp/yspDay.html": {
+            "uri": "/static/html/ysp/yspDay.html",
+            "type": "html"
+        },
+        "modules/html/ysp/yspMouth.html": {
+            "uri": "/static/html/ysp/yspMouth.html",
+            "type": "html"
+        },
+        "modules/images/yearicon.png": {
+            "uri": "/prototype/shTower/static/images/yearicon.png",
+            "type": "png"
+        },
+        "node_modules/framework7/dist/css/framework7.ios.css": {
+            "uri": "/prototype/shTower/static/node_modules/framework7/dist/css/framework7.ios.css",
+            "type": "css",
+            "pkg": "p0"
+        },
+        "node_modules/framework7/dist/css/framework7.ios.colors.min.css": {
+            "uri": "/prototype/shTower/static/node_modules/framework7/dist/css/framework7.ios.colors.min.css",
+            "type": "css",
+            "pkg": "p0"
+        },
+        "modules/css/common.scss": {
+            "uri": "/prototype/shTower/static/css/common.css",
+            "type": "css",
+            "pkg": "p1"
+        },
+        "modules/images/header_ly.png": {
+            "uri": "/prototype/shTower/static/images/header_ly.png",
+            "type": "png"
+        },
+        "modules/images/header_ys.png": {
+            "uri": "/prototype/shTower/static/images/header_ys.png",
+            "type": "png"
+        },
+        "modules/images/header_scdc.png": {
+            "uri": "/prototype/shTower/static/images/header_scdc.png",
+            "type": "png"
+        },
+        "modules/images/header_hyzx.png": {
+            "uri": "/prototype/shTower/static/images/header_hyzx.png",
+            "type": "png"
+        },
+        "lib/mod.js": {
+            "uri": "/prototype/shTower/static/lib/mod.js",
+            "type": "js"
+        },
+        "modules/app/main.js": {
+            "uri": "/prototype/shTower/static/app/main.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "modules/app/main"
+            },
+            "deps": [
+                "node_modules/framework7/dist/js/framework7.js",
+                "node_modules/echarts/dist/echarts.min.js"
+            ],
+            "pkg": "p2"
+        },
+        "node_modules/framework7/dist/img/i-f7-ios.png": {
+            "uri": "/prototype/shTower/static/node_modules/framework7/dist/img/i-f7-ios.png",
+            "type": "png"
+        },
+        "modules/fonts/iconfont.eot": {
+            "uri": "/prototype/shTower/static/fonts/iconfont.eot",
+            "type": "eot"
+        },
+        "modules/fonts/iconfont.woff": {
+            "uri": "/prototype/shTower/static/fonts/iconfont.woff",
+            "type": "woff"
+        },
+        "modules/fonts/iconfont.ttf": {
+            "uri": "/prototype/shTower/static/fonts/iconfont.ttf",
+            "type": "ttf"
+        },
+        "modules/fonts/iconfont.svg": {
+            "uri": "/prototype/shTower/static/fonts/iconfont.svg",
+            "type": "svg"
+        },
+        "modules/images/tab__yxsj_.png": {
+            "uri": "/prototype/shTower/static/images/tab__yxsj_.png",
+            "type": "png"
+        },
+        "modules/images/tab_wode_ac.png": {
+            "uri": "/prototype/shTower/static/images/tab_wode_ac.png",
+            "type": "png"
+        },
+        "modules/images/tab_yxsj_n.png": {
+            "uri": "/prototype/shTower/static/images/tab_yxsj_n.png",
+            "type": "png"
+        },
+        "modules/images/tab_wode_nav.png": {
+            "uri": "/prototype/shTower/static/images/tab_wode_nav.png",
+            "type": "png"
+        },
+        "node_modules/framework7/dist/js/framework7.js": {
+            "uri": "/prototype/shTower/static/node_modules/framework7/dist/js/framework7.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/framework7/dist/js/framework7"
+            },
+            "deps": [
+                "node_modules/process/browser.js"
+            ],
+            "pkg": "p3"
+        },
+        "node_modules/framework7/dist/js/framework7.js.map": {
+            "uri": "/static/node_modules/framework7/dist/js/framework7.js.map",
+            "type": "map"
+        },
+        "node_modules/echarts/dist/echarts.min.js": {
+            "uri": "/prototype/shTower/static/node_modules/echarts/dist/echarts.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/echarts/dist/echarts.min"
+            },
+            "pkg": "p3"
+        },
+        "node_modules/process/browser.js": {
+            "uri": "/prototype/shTower/static/node_modules/process/browser.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/process/browser"
+            },
+            "pkg": "p3"
+        }
+    },
+    "pkg": {
+        "p0": {
+            "uri": "/prototype/shTower/pkg/components.css",
+            "type": "css",
+            "has": [
+                "node_modules/framework7/dist/css/framework7.ios.css",
+                "node_modules/framework7/dist/css/framework7.ios.colors.min.css"
+            ]
+        },
+        "p1": {
+            "uri": "/prototype/shTower/pkg/common.css",
+            "type": "css",
+            "has": [
+                "modules/css/common.scss"
+            ]
+        },
+        "p2": {
+            "uri": "/prototype/shTower/pkg/aio.js",
+            "type": "js",
+            "has": [
+                "modules/app/main.js"
+            ],
+            "deps": [
+                "node_modules/framework7/dist/js/framework7.js",
+                "node_modules/echarts/dist/echarts.min.js"
+            ]
+        },
+        "p3": {
+            "uri": "/prototype/shTower/pkg/components.js",
+            "type": "js",
+            "has": [
+                "node_modules/process/browser.js",
+                "node_modules/framework7/dist/js/framework7.js",
+                "node_modules/echarts/dist/echarts.min.js"
+            ]
+        }
+    }
+}
