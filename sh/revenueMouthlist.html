@@ -1,0 +1,249 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="index.html" class="link">
+        <i class="iconfont icon-back2"></i>
+      </a>
+    </div>
+    <div class="center sliding">上海中心租金报表</div>
+    <div class="right">
+      <a href="#" class="yearicon">
+        <i class="yeariconin revendaycon" style="background-image: url(static/images/yearicon.png)"></i>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="revenueMouthlist" class="page Mouthlist revenue">
+    <div class="page-content">
+      <ul class="bodyContent bodyCon">
+        <li class="listbox">
+           <i class="calender" style="background-image: url(static/images/calender.png)"></i>
+          <div class="inbox">
+            <span>选择日期：</span>
+            <div class="inpubox">
+              <input type="text" id="pickerPut" value="2017-09" readonly >
+              <i class="iconfont icon-accordOpen" id="icondown"></i>
+            </div>
+          </div>
+          <button class="btnSch">查询</button>
+        </li>
+        <!-- <li class="listItemnull">
+          <img src="static/images/null.png" alt="">
+        </li> -->
+        <li class="revMtable">
+          <div class="blockbox">
+            <p class="titleCon">
+              <span>租金完成情况(单位:万元)</span>
+              <a href="#" class="accordation">
+                <span class="accOpen">收起</span>
+                <i class="iconfont accIcon"></i>
+              </a>
+            </p>
+            <div class="revMinner doneBox">
+              <div class="doneChild">
+                <div class="dataName">现金流</div>
+                <div class="revTable">
+                  <table class="revble">
+                    <thead>
+                      <tr class="theadtr">
+                        <th class="thfirst"></th>
+                        <th><sapn class="thinner">商业</sapn></th>
+                        <th><span class="thinner">办公楼</span></th>
+                        <th><span class="thinner">合计</span></th>
+                      </tr>
+                    </thead>
+                    <tbody class="revtbody">
+                      <tr class="tbodytr trblue">
+                        <td class="tdfirst">8月实际</td>
+                        <td>981</td>
+                        <td>3,971</td>
+                        <td>4,952</td>
+                      </tr>
+                      <tr class="tbodytr trblue">
+                        <td class="tdfirst">2017年累计实际</td>
+                        <td>3,263</td>
+                        <td>21,700</td>
+                        <td>24,964</td>
+                      </tr>
+                      <tr class="tbodytr trred">
+                        <td class="tdfirst">2017年度预算</td>
+                        <td>9,322</td>
+                        <td>46,566</td>
+                        <td>55,888</td>
+                      </tr>
+                      <tr class="tbodytr trechar">
+                        <td class="tdfirst">累计年度预算(%)</td>
+                        <td>
+                          <div class="tablechar" id="tdchar1"></div>
+                        </td>
+                        <td>
+                          <div class="tablechar" id="tdchar2"></div>
+                        </td>
+                        <td>
+                          <div class="tablechar" id="tdchar3"></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="doneChild">
+                <div class="dataName">直线法</div>
+                <div class="revTable">
+                  <table class="revble">
+                    <thead>
+                      <tr class="theadtr">
+                        <th class="thfirst"></th>
+                        <th><sapn class="thinner">商业</sapn></th>
+                        <th><span class="thinner">办公楼</span></th>
+                        <th><span class="thinner">合计</span></th>
+                      </tr>
+                    </thead>
+                    <tbody class="revtbody">
+                      <tr class="tbodytr trblue">
+                        <td class="tdfirst">8月实际</td>
+                        <td>981</td>
+                        <td>3,971</td>
+                        <td>4,952</td>
+                      </tr>
+                      <tr class="tbodytr trblue">
+                        <td class="tdfirst">2017年累计实际</td>
+                        <td>3,263</td>
+                        <td>21,700</td>
+                        <td>24,964</td>
+                      </tr>
+                      <tr class="tbodytr trred">
+                        <td class="tdfirst">2017年度预算</td>
+                        <td>9,322</td>
+                        <td>46,566</td>
+                        <td>55,888</td>
+                      </tr>
+                      <tr class="tbodytr trechar">
+                        <td class="tdfirst">累计年度预算(%)</td>
+                        <td>
+                          <div class="tablechar" id="tdchar4"></div>
+                        </td>
+                        <td>
+                          <div class="tablechar" id="tdchar5"></div>
+                        </td>
+                        <td>
+                          <div class="tablechar" id="tdchar6"></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="blockbox">
+            <p class="titleCon">
+              <span>应收-欠费完成情况(单位:万元)</span>
+              <a href="#" class="accordation">
+                <span class="accOpen">收起</span>
+                <i class="iconfont accIcon"></i>
+              </a>
+            </p>
+            <div class="revMinner doneBox">
+              <div class="doneChild">
+                <div class="dataName">2016年</div>
+                <div class="revTable">
+                  <table class="revble">
+                    <thead>
+                      <tr class="theadtr">
+                        <th class="thfirst"></th>
+                        <th><sapn class="thinner">商业</sapn></th>
+                        <th><span class="thinner">办公楼</span></th>
+                        <th><span class="thinner">合计</span></th>
+                      </tr>
+                    </thead>
+                    <tbody class="revtbody">
+                      <tr class="tbodytr trblue">
+                        <td class="tdfirst">应收</td>
+                        <td>981</td>
+                        <td>3,971</td>
+                        <td>4,952</td>
+                      </tr>
+                      <tr class="tbodytr trblue">
+                        <td class="tdfirst">实收</td>
+                        <td>3,263</td>
+                        <td>21,700</td>
+                        <td>24,964</td>
+                      </tr>
+                      <tr class="tbodytr trred">
+                        <td class="tdfirst">欠费</td>
+                        <td>9,322</td>
+                        <td>46,566</td>
+                        <td>55,888</td>
+                      </tr>
+                      <tr class="tbodytr trechar">
+                        <td class="tdfirst">收缴率(%)</td>
+                        <td>
+                          <div class="tablechar" id="td1char1"></div>
+                        </td>
+                        <td>
+                          <div class="tablechar" id="td1char2"></div>
+                        </td>
+                        <td>
+                          <div class="tablechar" id="td1char3"></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="doneChild">
+                <div class="dataName">2017年</div>
+                <div class="revTable">
+                  <table class="revble">
+                    <thead>
+                      <tr class="theadtr">
+                        <th class="thfirst"></th>
+                        <th><sapn class="thinner">商业</sapn></th>
+                        <th><span class="thinner">办公楼</span></th>
+                        <th><span class="thinner">合计</span></th>
+                      </tr>
+                    </thead>
+                    <tbody class="revtbody">
+                      <tr class="tbodytr trblue">
+                        <td class="tdfirst">应收</td>
+                        <td>981</td>
+                        <td>3,971</td>
+                        <td>4,952</td>
+                      </tr>
+                      <tr class="tbodytr trblue">
+                        <td class="tdfirst">实收</td>
+                        <td>3,263</td>
+                        <td>21,700</td>
+                        <td>24,964</td>
+                      </tr>
+                      <tr class="tbodytr trred">
+                        <td class="tdfirst">欠费</td>
+                        <td>9,322</td>
+                        <td>46,566</td>
+                        <td>55,888</td>
+                      </tr>
+                      <tr class="tbodytr trechar">
+                        <td class="tdfirst">收缴率(%)</td>
+                        <td>
+                          <div class="tablechar" id="td1char4"></div>
+                        </td>
+                        <td>
+                          <div class="tablechar" id="td1char5"></div>
+                        </td>
+                        <td>
+                          <div class="tablechar" id="td1char6"></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
