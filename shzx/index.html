@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="address=no" name="format-detection"/>
+  <meta name="apple-mobile-web-app-capable" content="no" />
+  <title>Document</title>
+  <link rel="stylesheet" href="static/css/common.css">
+   <link rel="apple-touch-icon-precomposed" href="" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="" />
+</head>
+<body>
+  <div class="statusbar-overlay"></div>
+  <div class="panel-overlay"></div>
+    <!-- Views -->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main" >
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+            <div class="center sliding">销售数据概览</div>
+            <div class="navbarlink">
+              <ul class="clearfix">
+                <li><a href="ggbDay.html"><i style="background-image: url(static/images/header_hyzx_bx.png);"></i></a></li>
+                <li><a href="yspDay.html"><i style="background-image: url(static/images/header_ly_bx.png);"></i></a></li>
+                <li><a href="scb.html"><i style="background-image: url(static/images/header_scdc_bx.png);"></i></a></li>
+                <li><a href="hyzx.html"><i style="background-image: url(static/images/header_ys_bx.png);"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page index">
+            <div class="headerfix">
+                <ul class="clearfix">
+                  <li class="header-item"><a href="ggbDay.html" ><i style="background-image: url(static/images/header_ly.png);"></i><span>观光部</span></a></li>
+                  <li class="header-item"><a href="yspDay.html"><i style="background-image: url(static/images/header_ys.png);"></i><span>衍生品</span></a></li>
+                  <li class="header-item"><a href="scb.html"><i style="background-image: url(static/images/header_scdc.png);"></i><span>市场部</span></a></li>
+                  <li class="header-item"><a href="hyzx.html"><i style="background-image: url(static/images/header_hyzx.png);"></i><span>会议中心</span></a></li>
+                  <li class="header-item"><a href="revenueDaylist.html"><i style="background-image: url(static/images/header_revenue.png);"></i><span>招商部</span></a></li>
+                </ul>
+            </div>
+            <!-- Scrollable page content -->
+            <div class="page-content">
+            	<div class="bodyContent">
+            		<p class="titleCon">昨日完成情况</p>
+            		<div id="dayDone" class="doneBox">
+                  <div class="dayDone-index" id="dayDone1"></div>  
+                  <div class="dayDone-index" id="dayDone2"></div>  
+                  <div class="dayDone-index" id="dayDone3"></div>  
+                </div>
+            		<p class="titleCon">月度完成情况</p>
+            		<div id="mouthDone" class="doneBox">
+            			<div class="mouthTop">
+            				<ul class="clearfix doneUl">
+            					<li class="doneColor">
+            						<i class="doneAc"></i>
+            						<span>月度实际</span>
+            					</li>
+            					<li class="doneColor">
+            						<i class="doneYu"></i>
+            						<span>月度预算</span>
+            					</li>
+            				</ul>
+            			</div>
+            			<div class="mouthBtm clearfix">
+            				<div class="mouthLeft">      				
+		            			<div class="mouthLTbox"><div class="mouthLT"></div></div>
+		            			<div class="mouthBtn mouthLeftBtn">6月</div>
+		            			<div class="mouthLB">
+		            				<ul class="mouthpie clearfix">
+		            					<li class="mouthThird mouthThird1"></li>
+		            					<li class="mouthThird mouthThird2"></li>
+		            					<li class="mouthThird mouthThird3"></li>
+		            				</ul>
+		            				<div class="mouthpieLab">
+		            					<span class="MP1">观光营业数据完成率</span>
+		            					<span class="MP2">观光参观人数完成率</span>
+		            					<span class="MP3">衍生品营业完成率</span>
+		            				</div>
+		            			</div>
+			        			</div>
+			        			<div class="mouthRight">				
+			        			  <div class="mouthRTbox"><div class="mouthRT"></div></div>
+		            			<div class="mouthBtn mouthRightBtn">5月</div>		        			  
+			        			  <div class="mouthRB">
+                        <ul class="mouthpie clearfix">
+                          <li class="mouthThird mouthThird4"></li>
+                          <li class="mouthThird mouthThird5"></li>
+                        </ul>
+                        <div class="mouthpieLab">
+                          <span class="MP1">市场部营业数据完成率</span>
+                          <span class="MP2">会议中心营业数据完成率</span>
+                        </div>
+                      </div>
+			        			</div>
+			        		</div>            			
+            		</div>
+            		<p class="titleCon">年度完成情况</p>
+            		<div id="yearDone" class="doneBox">
+                  <div class="mouthTop">
+                    <ul class="clearfix doneUl">
+                      <li class="doneColor">
+                        <i class="doneAc"></i>
+                        <span>年度实际</span>
+                      </li>
+                      <li class="doneColor">
+                        <i class="doneYu"></i>
+                        <span>年度预算</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mouthBtm">
+                    <div class="yearTop">
+                      <div class="yearTopLine">
+                        <div class="yearLineDone" id="yld1"></div>
+                        <div class="yearLineDone" id="yld2"></div>
+                      </div>
+                      <!-- <div class="yearTopLab">
+                        <span>观光营业数据</span>
+                        <span>观光参观人数</span>
+                        <span>衍生品营业数据</span>
+                        <span>市场部营业数据</span>
+                        <span>会议中心营业数据</span>
+                      </div> -->
+                    </div>
+                    <div class="yearBottom">
+                      <ul class="yearpie clearfix">
+                        <li class="yearThird yearThird1"></li>
+                        <li class="yearThird yearThird2"></li>
+                        <li class="yearThird yearThird3"></li>
+                        <li class="yearThird yearThird4"></li>
+                        <li class="yearThird yearThird5"></li>
+                      </ul>
+                        <div class="yearpieLab">
+                          <span class="MP1">观光营业数据完成率</span>
+                          <span class="MP2">观光参观人数完成率</span>
+                          <span class="MP3">衍生品营业完成率</span>
+                          <span class="MP4">市场部营业数据完成率</span>
+                          <span class="MP5">会议中心营业数据完成率</span>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            	</div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom Toolbar-->
+        <div class="toolbar">
+          <div class="toolbar-inner">
+            <a href="index.html" class="toolbar-item active"><i class="toolBaricon icon-data"></i><span>运营数据</span></a>
+            <a href="home.html" class="toolbar-item"><i class="toolBaricon icon-main"></i><span>我的</span></a>
+          </div>
+      </div>
+      </div>
+    </div>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+  <script type="text/javascript" src="static/Framework7/js/framework7.js"></script>
+  <script type="text/javascript" src="static/js/echarts.common.min.js"></script>
+  <script type="text/javascript" src="static/js/echarts.js"></script>
+  <script type="text/javascript" src="static/js/index.js"></script>
+  <script type="text/javascript" src="static/js/ggb.js"></script>
+  <script type="text/javascript" src="static/js/ysp.js"></script>
+  <script type="text/javascript" src="static/js/main.js"></script>
+</body>
+</html>

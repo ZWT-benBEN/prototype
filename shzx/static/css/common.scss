@@ -1,0 +1,1767 @@
+// Core variables and mixins
+@import "variables";
+@import "mixins";
+@import "iconfont";
+@import "../Framework7/css/framework7.ios.css";
+@import "../Framework7/css/framework7.ios.colors.css";
+/*$designdraft为设计稿宽度，可以随时按照设计师发来的设计稿改动*/
+@mixin user($designdraft){
+  /*以下为各个主流移动设备宽度必须从大到小排列；
+  ipad pro:1024px;
+  ipad:768px;
+  iphone6+:414px;
+  iphone6:375px;
+  iphone5:320px
+  */
+  $list:1024px,800px,768px,720px,414px,412px,384px,375px,360px,320px;
+  @each $i in $list{
+    /*12栅格系统*/
+    @media screen and (max-width:#{$i}){
+      html{
+        /*使用rem，根据比例换算出需要的像素，6px等于.06rem*/
+        font-size: 100px*($i/$designdraft);
+      }
+    }
+  }
+}
+
+$theBlue: #1bb5ec;
+$theBlueAc: #55b3e8;
+$grayTollbar: #a5aec6;
+$grayBorder: #e6e9f0;
+$blueAc: #0f98e7;
+$blueYu: #afe5f8;
+$graybase: #f2f4f7;
+//这里输入设计稿宽度
+@include user(750px);
+.page {
+  background: $graybase;
+}
+.clearfix {
+  @include clearfix();
+}
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+.page-content {
+  position: relative;
+}
+.navbar,
+.subnavbar{
+  color: $white;
+  background-color: $theBlue;
+  &:after{
+    display: none;
+  }
+  a{
+    color: $white;
+  }
+}
+.navbar .center {
+ font-size: 18px;
+ font-weight: normal !important;
+}
+.navbar.noBg {
+  background: red;
+}
+.navbar {
+  position: relative;
+  .yeariconin {
+    position: absolute;
+    top:50%;
+    right: 0;
+    margin-top: -11px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-size: cover;
+  }
+}
+html.pixel-ratio-2 {
+  .advice-item:before{
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+  }
+  .activities .timeline:before{
+    border-width: 0.5px;
+  }
+  .servant:after{
+    transform: scaleY(0.5);
+  }
+}
+html.pixel-ratio-3 {
+  .advice-item:before{
+    -webkit-transform: scaleX(0.33);
+    transform: scaleX(0.33);
+  }
+  .activities .timeline:before{
+    border-width: 0.33px;
+  }
+  .servant:after{
+    transform: scaleY(0.33);
+  }
+}
+.tabs-animated-wrap > .tabs {
+  height: auto;
+}
+.toolbar {
+    height: 46px;
+    background-color: $white;
+    .toolbar-item{
+     position: relative;
+     display: block;
+     width: 50%;
+     text-align: center;
+     font-size: 12px;
+     color: $grayTollbar;
+     &.active{
+      color: $theBlue; 
+      .icon-data {
+        background-image: url(../images/tab__yxsj_.png);
+      }
+      .icon-main {
+        background-image: url(../images/tab_wode_ac.png);
+      }
+     }
+     span {
+      display: block;
+      margin-top: 0;
+    }
+    .toolBaricon {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        background-size: cover;
+    }
+    .icon-data {
+        background-image: url(../images/tab_yxsj_n.png);
+    }
+    .icon-main {
+        background-image: url(../images/tab_wode_nav.png);
+    }
+  }
+}
+.navbar-inner {
+  a.link {
+    width: 44px;
+  }
+  .right {
+    width: 44px;
+    height: 44px;
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .navbarlink {
+    display: none;
+    width: 100%;
+    height: 100%;
+    ul {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+    li {
+      position: relative;
+      float: left;
+      width: 25%;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 5px 0;
+        text-align: center;
+      }
+      i {
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        background-size: cover;
+      }
+    }
+  }
+}
+.navbar-inner.active {
+  .navbarlink {
+    display: block;
+  }
+  .sliding {
+    display: none;
+  }
+}
+/* ========================MASK=========================== */
+.actions-modal {
+  top: 44px;
+  bottom: inherit;
+  -webkit-transform: translate3d(0, -130%, 0);
+  transform: translate3d(0, -130%, 0);
+  .actions-modal-group {
+    margin: 0;
+    border-radius: 0;
+    background-color: $white;
+  }
+  .actions-modal-button {
+    padding: 0 15px;
+    border-radius: 0 !important;
+    border-bottom: 1px solid $grayBorder;
+    font-size: 16px;
+    text-align: left;
+    color: #333;
+  }
+}
+.actions-modal.modal-out {
+  -webkit-transform: translate3d(0, -130%, 0);
+  transform: translate3d(0, -130%, 0);
+}
+/* ========================首页=========================== */
+.headerfix {
+    // position: relative;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 103px;
+    padding: 0 .2rem;
+    background-color: $white;
+    box-sizing: border-box;
+    border-bottom: 1px solid $grayBorder;
+    ul{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
+    .header-item {
+      float: left;
+      width: 19%;
+      text-align: center;
+      a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        padding: 20px 0;
+        font-size: 14px;
+        color: #1e1e1e;
+      }
+      i {
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        background-size: cover;
+      }
+      span {
+        display: block;
+      }
+    }
+}
+p{
+    margin: 0;
+}
+.bodyCon {
+  // padding: 0 !important;
+  .titleCon {
+    padding: 0 .2rem;
+    transition: all .8s ease;
+    .accordation {
+      position: absolute;
+      top:50%;
+      right: .2rem;
+      margin-top: -.21rem;
+      display: inline-block;
+      width: 1rem;
+      height: .42rem;
+      background-color: $theBlue;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #fff;
+      text-align: center;
+      line-height: .42rem;
+      .accIcon {
+        display: inline-block;
+        font-size: 12px;
+        &:before {
+          content: "\e611";
+        }
+      }
+    }
+  }
+  .doneBox {
+    max-height: 22rem;
+    overflow: hidden;
+    transition: all .6s ease;
+  }
+  .blockbox.active {
+    .doneBox {
+      max-height: 0;
+    }
+    .titleCon {
+      background-color: $white;
+      border-bottom: 1px solid $grayBorder;
+      .accIcon {
+        &:before {
+          content: "\e600";
+        }
+      }
+    }
+  }
+}
+.index .bodyContent {
+  padding: 103px .2rem 0 .2rem;
+}
+.bodyContent {
+    width: 100%;
+    overflow: auto;
+    margin-bottom: 20px;
+    padding: 0 .2rem;
+    .titleCon {
+      position: relative;
+      height: 54px;
+      line-height: 54px;
+      text-align: left;
+      font-size: 16px;
+      color: #1e1e1e;
+      .accordation {
+        position: absolute;
+        top:50%;
+        right: .2rem;
+        margin-top: -.21rem;
+        display: inline-block;
+        width: 1rem;
+        height: .42rem;
+        background-color: $theBlue;
+        border-radius: 4px;
+        font-size: 12px;
+        color: #fff;
+        text-align: center;
+        line-height: .42rem;
+        .accIcon {
+          display: inline-block;
+          font-size: 12px;
+          &:before {
+            content: "\e611";
+          }
+        }
+      }
+    }
+    .doneBox {
+      width: 100%;
+      background-color: $white;
+      color: #777777;
+      box-shadow: 0 0 2px rgba(00,00,00,.2);
+
+    }
+    #dayDone {
+      display: flex;
+      justify-content: $white;
+      height: 3.6rem;
+      background-color: transparent !important;
+      // box-shadow: none !important;
+      .dayDone-index {
+        float: left;
+        height: 100%;
+        background-color: $white;
+        box-sizing: border-box;
+      }
+      .dayDone-index {
+        width: 33.333333%;
+      }
+    }
+    @media (min-width: 1200px){
+      #dayDone {
+          height: 280px;
+      }
+    }
+    #mouthDone {
+      height: 8.25rem;
+    }
+    @media (min-width: 1200px){
+      #mouthDone {
+        height: 500px;
+        .mouthBtn {
+          width: 80px;
+          height: 36px;
+          margin-top: -18px;
+          line-height: 36px;
+        }
+      }
+    }
+    .mouthBtm {
+      height: 86%;
+      .mouthBtn {
+        position: absolute;
+        z-index: 999;
+        top: 60%;
+        left: 50%;
+        margin-top: -.18rem;
+        margin-left: -.4rem;
+        width: .8rem;
+        height: .36rem;
+        border-radius: 4px;
+        background-color: $graybase;
+        font-size: 12px;
+        text-align: center;
+        line-height: .36rem;
+      }
+    }
+    .mouthLeft {
+        position: relative;
+        z-index: 50;
+        float: left;
+        width: 60%;
+        height: 100%;
+        border-right: 1px solid $grayBorder;
+    }
+    .mouthRight {
+        position: relative;
+        z-index: 50;
+        float: left;
+        width: 40%;
+        height: 100%;
+    }
+    .mouthLTbox,.mouthRTbox {
+      position: relative;
+      z-index: 50;
+      width: 100%;
+      height: 60%;
+      border-bottom: 1px solid $grayBorder;
+    }
+    .mouthLT,.mouthRT {
+      position: relative;
+      width: 100%;
+      height: 90%;
+    }
+    .mouthTop {
+      position: relative;
+      height: 14%;
+      border-bottom: 1px solid $grayBorder;
+      .doneUl {
+        position: absolute;
+        top: 50%;
+        display: flex;
+        width: 100%;
+        margin-top: -8px;
+      }
+      .doneColor {
+        float: left;
+        width: 50%;
+        font-size: 14px;
+        i {
+          display: inline-block;
+          width: 36px;
+          height: 16px;
+          vertical-align: sub;
+        }
+        .doneAc {
+          background-color: $blueAc;
+        }
+        .doneYu {
+            background-color: $blueYu;
+        }
+      }
+        .doneColor:first-child {
+            margin-right: .5rem;
+            text-align: right;
+        }
+      }
+    .mouthLB,.mouthRB {
+      height: 40%;
+    }
+    .mouthpie,.yearpie {
+        display: flex;
+        width: 100%;
+        height: 58%;
+      }
+      .mouthThird,.yearThird {
+        float: left;
+        display: flex;
+        height: 100%;
+      }
+      .mouthpieLab,.yearpieLab {
+        width: 100%;
+        display: flex;
+        span {
+          display: inline-block;
+          padding: 0 5px;
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    .mouthLB {
+      .mouthThird {
+        width: 33.3333%;
+      }
+      .mouthpieLab {
+        span {
+          width: 33.333333333%;
+        }
+      }
+    }
+    .mouthRB {
+      .mouthThird {
+        width: 50%;
+      }
+      .mouthpieLab {
+        span {
+          width: 50%;
+        }
+      }
+    }
+    #yearDone {
+      height: 8.25rem;
+    }
+    @media (min-width: 1200px){
+      #yearDone {
+        height: 500px;
+      }
+    }
+    .yearTop {
+      width: 100%;
+      height: 60%;
+      border-bottom: 1px solid $grayBorder;
+      .yearTopLine {
+        height: 80%;
+      }
+      .yearLineDone {
+        height: 100%;
+      }
+      #yld1 {
+        width: 20%;
+      }
+      #yld2 {
+        width: 80%;
+      }
+      .yearTopLab {
+        display: flex;
+        height: 20%;
+        span {
+          display: inline-block;
+          width: 20%;
+          padding: 0 5px;
+          text-align: center;
+          font-size: 12px;
+        }
+      }
+    }
+    .yearBottom {
+      width: 100%;
+      height: 40%;
+      .yearThird {
+        width: 20%;
+      }
+      .yearpieLab {
+        span {
+          width: 20%;
+        }
+      }
+    }
+}
+/* ========================观光部日============================ */
+.ggbDay {
+  .doneBox {
+  }
+  .ggbDaypie {
+    height: 5rem;
+  }
+  .ggbDayline {
+    height: 5rem;
+  }
+}
+.dataTop {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid $grayBorder;
+  text-align: center;
+  font-size: 20px;
+  color: $theBlue;
+}
+.dataName {
+  position: relative;
+  height: 50px;
+  padding-left: 16px;
+  line-height: 50px;
+  color: #777;
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -10px;
+    content: "";
+    width: 4px;
+    height: 20px;
+    background-color: $theBlue;
+  }
+}
+/* ========================观光部月============================ */
+.mouthBox {
+  border-bottom: 1px solid $grayBorder;
+  .ggbMouthpie {
+    height: 3.5rem;
+  }
+  .ggbMouthLine {
+    height: 5rem;
+  }
+}
+/* ========================观光部年============================ */
+.bodyCon .blockboxShort{
+  .doneBox {
+    max-height: 8rem;
+  }
+}
+/* ========================衍生品日============================ */
+.yspDaydata {
+  .yspDtLine {
+    display: flex;
+    border-bottom: 1px solid $grayBorder;
+    &:last-child {
+      border-bottom: 0;
+    }
+    ul {
+      width: 100%;
+      height: 100%;
+    }
+    .yspDt {
+      float: left;
+      height: 100%;
+    }
+  }
+  .yspDtLine1 {
+    height: 4rem;
+    .yspDt { 
+      width: 33.333333%;
+      border-right: 1px solid $grayBorder;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+  .yspDtLine2 {
+    height: 3rem;
+    .yspDt {
+      width: 50%;
+    }
+  }
+  .yspDtLine3 {
+    .yspDt6 {
+      width: 100%;
+      height: 4rem;
+    }
+  }
+}
+
+/* ========================衍生品月============================ */
+.doneBoxin {
+  background-color: $white;
+}
+.yspMouth,.yspYear {
+  .ggbMouthpie3 {
+    height: 4rem;
+  }
+  .yspChoose {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      padding-top: 15px;
+    }
+    .yspcho {
+      float: left;
+      padding: 0 2px;
+      margin: 5px 5px 5px 0;
+      line-height: .5rem;
+      text-align: center;
+      border: 1px solid $grayBorder;
+      background-color: $graybase;
+      font-size: 12px;
+      a {
+        color: #666;
+      }
+      &.active {
+        background-color: #bae9f9;
+        border: 1px solid $theBlueAc;
+        a {
+          color: $theBlueAc;
+        }
+      }
+    }
+  }
+  .yspCHinner {
+    position: relative;
+    height: 6rem;
+  }
+  .chooseTab {
+    position: absolute;
+    z-index: 0;
+    top:0;
+    left: -200%;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    &.active {
+      z-index: 999;
+      opacity: 1;
+      left: 0;
+      .dataName {
+        z-index: 22222;
+      }
+    }
+  }
+  .tabLine {
+    height: 5rem;
+  }
+}
+
+// 我的
+.page-header {
+  position: relative;
+  width: 100%;
+  height: 3.2rem;
+  background-color: $theBlue;
+  .header-inner {
+    position: absolute;
+    bottom: .4rem;
+    width: 100%;
+    height: 1.8rem;
+    padding-left: .6rem;
+  }
+  .leftImg {
+    position: relative;
+    float: left;
+    width: 30%;
+    height: 1.6rem;
+    background-color: transparent !important;
+    .userimg {
+      width: 1.6rem;
+      height: 100%;
+      background-color: $white;
+      border-radius: 50%;
+    }
+    .userSex {
+      position: absolute;
+      right: .46rem;
+      bottom: .1rem;
+      width: .4rem;
+      height: .4rem;
+      background-color: $white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: .46rem;
+      .iconfont {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+  .rightEdit {
+    float: left;
+    width: 70%;
+    padding-top: .3rem;
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      color: $white;
+    }
+    .userInner {
+      float: left;
+      width: 85%;
+    }
+    .icon-go2 {
+      line-height: 56px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .userName {
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: normal;
+    }
+  }
+}
+.list-block {
+  margin: 0;
+  ul {
+    &:after {
+      height: 0;
+    }
+  }
+  .item-divider {
+    height: 12px;
+    background: #f2f4f7;
+  }
+  .item-content {
+    width: 100%;
+    padding-left: 8px;
+    &:after {
+      height: 0;
+    }
+  }
+  .item-title {
+    .iconfont {
+      margin-right: 8px;
+    }
+  }
+  .item-white {
+    width: 100%;
+    height: 3rem;
+    background-color: $white;
+  }
+  .item-exit {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: $theBlue;
+    i{
+      font-size: 20px;
+    }
+  }
+}
+// 设置
+.userSet {
+  .page-header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .page-content {
+    background-color: $white;
+  }
+  .item-content {
+    color: #000;
+  }
+  .list-block ul{
+    &:after {
+      height: 1px;
+    }
+  }
+  .item-input {
+    input {
+      text-align: right;
+      /*color: #8e8e93;*/
+      color: #757575;
+    }
+  }
+  .itemC {
+    .item-inner {
+      margin-left: 8px;
+    }
+  }
+}
+.headerCon {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: $white;
+  font-size: 16px;
+  .pic {
+    position: relative;
+    height: 72%;
+  }
+  .picCenter {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 15%;
+    margin:  auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+    .picmask {
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      line-height: 1.5rem;
+      border-radius: 50%;
+      background-color: rgba(00,00,00,.5);
+      .iconfont {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        font-size: 22px;
+      }
+      input {
+        position: relative;
+        z-index: 222;
+        display: block;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+      }
+    }
+    .userSex {
+      position: absolute;
+      right: 0rem;
+      bottom: 0rem;
+      width: .4rem;
+      height: .4rem;
+      background-color: $white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: .46rem;
+      .iconfont {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+// 修改昵称
+.userbox {
+  width: 100%;
+  height: 44px;
+  background-color: $white;
+  input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 8px;
+    font-size: 14px;
+  }
+}
+// 关于我们
+.pageWhite {
+  background-color: $white;
+  .list-block ul{
+    &:after {
+      height: 1px;
+    }
+  }
+}
+// 账号管理
+.pageAcc {
+  background-color: $white;
+  padding: 0 8px;
+  .item-content {
+    padding-left: 0;
+  }
+  .list-block .item-title.label {
+    width: 26%;
+    font-size: 15px;
+  }
+  .list-block input {
+    font-size: 12px;
+  }
+  .item-inner.active {
+    &:after {
+      background-color: $theBlue;
+    }
+  }
+}
+.button.active {
+  background-color: $theBlue;
+}
+.button {
+  border: 1px solid $theBlue;
+  height: 35px;
+  line-height: 35px;
+  font-size: 16px;
+}
+// 绑定手机号
+.accountTel {
+  .item-input {
+    position: relative;
+  }
+  button {
+    outline: none;
+    border: none;
+  }
+  .btnCode {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -13px;
+    padding: 0 10px;
+    min-width: 76px;
+    height: 26px;
+    line-height: 28px;
+    background-color: #f5627a;
+    color: $white;
+    box-sizing: border-box;
+    border-radius: 1px;
+  }
+  .verifyPic {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -13px;
+    width: 76px;
+    height: 26px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+// 登录首页
+.loginIndex {
+  .leftImg {
+    background-color: #f2f4f7;
+  }
+  .page-header .rightEdit {
+    height: 1.6rem;
+    line-height: 1.6rem;
+    padding-top: 0;
+    .icon-go2 {
+      line-height: 0;
+    }
+  }
+}
+// 登录页
+.login {
+  .page-content {
+    background-color: $white;
+  }
+  .page-header {
+    height: 4.5rem;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 14px;
+    background-image: url(../images/loginbg.png);
+    background-size: 100% 100%;
+  }
+  .headernav {
+    height: 10%;
+    width: 100%;
+    a{
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: $white;
+    }
+  }
+  .headerName {
+    position: relative;
+    height: 70%;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    color: $white;
+    span {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      display: inline-block;
+    }
+  }
+  .headertab {
+    width: 100%;
+    height: 20%;
+    .tabul {
+      height: 100%;
+    }
+    .tabItem {
+      position: relative;
+      float: left;
+      width: 50%;
+      height: 100%;
+      line-height: 34px;
+      text-align: center;
+      color: $white;
+      font-size: 16px;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: $white;
+      }
+      &.active {
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: -1px;
+          right: 0;
+          left: 0;
+          margin: auto;
+          width: 0;
+          height: 0;
+          border-left: 9px solid transparent;
+          border-right: 9px solid transparent;
+          border-bottom: 9px solid #fff;
+        }
+      }
+    }
+  }
+  .tabInner {
+    height: 100%;
+    .tabs {
+      height: 100%;
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+  }
+  .content-block {
+    margin: 45px 0;
+    padding: 0 30px;
+  }
+  .putbox {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    border: 1px solid $grayBorder;
+    border-radius: 4px;
+    .puticon {
+      position: relative;
+      display: inline-block;
+      width: 15%;
+      height: 100%;
+      text-align: center;
+      line-height: 40px;
+      i {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+      }
+    }
+    input {
+      position: absolute;
+      top:0;
+      right: 0;
+      outline: none;
+      border: none;
+      display: inline-block;
+      width: 85%;
+      height: 100%;
+      background-color: transparent;
+      font-size: 13px;
+      color: #999;
+    }
+  }
+  .putIn {
+    margin-bottom: 30px;
+  }
+  .putBtn {
+    .button {
+      margin-bottom: 15px;
+    }
+    .putForget {
+      width: 100%;
+      text-align: center;
+      a {
+        color: $theBlue;
+      }
+    }
+  }
+  .tabs-animated-wrap {
+    height: auto;
+  }
+  .btnCode {
+    position: absolute;
+    right: 9px;
+    top: 50%;
+    margin-top: -13px;
+    padding: 0 5px;
+    min-width: 76px;
+    height: 26px;
+    line-height: 28px;
+    background-color: $white;
+    color: $white;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 1px solid $theBlue;
+    color: $theBlue;
+  }
+}
+// 修改密码
+.pCh {
+  .mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 222;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(00,00,00,.3);
+  }
+  .mask.active {
+    display: block;
+  }
+  .maskbox {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 70%;
+    padding: 20px 0;
+    border-top: 6px solid $theBlue;
+    background-color: $white;
+    border-radius: 4px;
+  }
+  .closemask {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    a {
+      color: #999;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .maskimg {
+    position: relative;
+    height: 44px;
+    width: 100%;
+    margin-bottom: 14px;
+    img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 44px;
+      height: 44px;
+    }
+  }
+  .maskCon {
+    margin-bottom: 20px;
+    h3 {
+      width: 100%;
+      font-weight: normal;
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    p {
+      width: 100%;
+      text-align: center;
+      color: #999;
+    }
+  }
+  .maskbtn {
+    width: 80%;
+    height: 35px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 35px;
+    background-color: $theBlue;
+    color: $white;
+    a {
+      color: $white;
+    }
+  }
+}
+.list-block .item-after {
+  color: #757575;
+}
+// 意见反馈
+.feedback.navbar-inner .right {
+    width: auto;
+    height: auto;
+  }
+.feedback {
+  .page-content {
+    background-color: $white;
+  }
+  .putBox {
+    height: 100%;
+  }
+  .putTop {
+    padding: 0 8px;
+    height: 3.8rem;
+    .Topnum {
+      height: 38px;
+      line-height: 38px;
+      border-bottom: 1px solid $grayBorder;
+      text-align: right;
+      color: #999;
+    }
+    .textareabox {
+      width: 100%;
+      height: 75%;
+    }
+    #feedtext {
+      width: 100%;
+      height: 100%;
+      resize: none;
+      outline: none;
+      border: none;
+      padding: 8px 0;
+      font-size: 13px;
+      color: #999;
+    }
+  }
+  .putCenter {
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 8px;
+    background-color: $graybase;
+    color: #999;
+    font-size: 14px;
+  }
+  .putBottom {
+    width: 100%;
+    height: auto;
+    padding: 15px 8px 60px 8px;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .picItem {
+      position: relative;
+      float: left;
+      width: 23%;
+      height: 0;
+      padding-top: 23%;
+      margin-right: 2%;
+      margin-bottom: 2%;
+      background-color: $graybase;
+      .preview {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .removepreview {
+        &.active {
+          display: block;
+        }
+        position: absolute;
+        top:0;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(00,00,00,.3);
+        .iconfont {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          width: 30px;
+          height: 30px;
+          text-align: center;
+          line-height: 30px;
+          color: $white;
+          font-size: 22px;
+        }
+      }
+    }
+    .putPic {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+    .picItem.PutPicbox {
+      background-image: url(../images/putpic.png);
+      background-size: cover;
+    }
+  }
+}
+
+.echarGrid:after {
+  position: absolute;
+  left: 0;
+  top: 5%;
+  margin-top: -10px;
+  content: "";
+  width: 4px;
+  height: 20px;
+  background-color: #1bb5ec;
+}
+
+// error404
+.error4 {
+  .page-content {
+    position: relative;
+    background-color: $white;
+    background-image: url(../images/error404.png);
+    background-size: cover;
+  }
+  .refreshbtn {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    margin-left: -80px;
+    /*margin: auto;*/
+    /*width: 30%;
+    height: 40px;*/
+    padding: 10px 40px;
+    border-radius: 50px;
+    text-align: center;
+    /*line-height: 40px;*/
+    border: 1px solid #1bb5ec;
+    color: #1bb5ec;
+    font-size: 20px;
+  }
+}
+// @media (max-height: 480px){
+//   .error4 .refreshbtn {
+//     top: 65%;
+//   }
+// }
+.error5 {
+  .page-content {
+    position: relative;
+    background-color: $white;
+    background-image: url(../images/error500.png);
+    background-size: cover;
+  }
+}
+
+// 招商 商户营业收入
+// 日营业额
+// .page.revenull {
+//   background-color: #fff;
+// }
+.revenue {
+  // padding-top: .4rem;
+  .revBlue {
+    color: $theBlue;
+  }
+  .listbox {
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 10px;
+    .calender {
+      position: absolute;
+      top: 19px;
+      display: inline-block;
+      width: 25px;
+      height: 22px;
+      vertical-align: middle;
+      background-size: cover;
+    }
+    .inbox {
+      position: absolute;
+      left: 40px;
+      display: inline-block;
+      width: 65%;
+      height: 60px;
+      color: $theBlue;
+      font-size: 15px;
+    }
+    .inpubox {
+      position: relative;
+      display: inline-block;
+      width: 56%;
+      height: 100%;
+    }
+    #calenderPut, #pickerPut {
+      display: inline-block;
+      width: 100%;
+      height: 26px;
+      line-height: 26px;
+      padding-right: 20px;
+      border-radius: 0;
+      box-shadow: none;
+      text-align: center;
+      background-color: transparent;
+      outline: none;
+      border: 1px solid $theBlue; 
+      box-sizing: border-box;
+      font-size: 13px;
+      color: $theBlue;
+      vertical-align: middle;
+    }
+    .btnSch {
+      position: absolute;
+      right: 5px;
+      top:17px;
+      width: 20%;
+      height: 26px;
+      line-height: 28px;
+      text-align: center;
+      background-color: $theBlue;
+      border-radius: 4px;
+      outline: none;
+      border: none;
+      color: #fff;
+      font-size: 13px;
+      transition: all .1s ease;
+      &.active {
+        background-color: #f2f4f7;
+        border: 1px solid $theBlue;
+        color: $theBlue;
+      }
+    }
+    #icondown {
+      position: absolute;
+      right: 0;
+      top:2px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      // line-height: 20px;
+      color: #8a8b8c;
+      font-size: 14px;
+    }
+  }
+  .listItemnull {
+    width: 100%;
+    img {
+      width: 100%;
+      background-size: cover;
+    }
+  }
+  .listItem {
+    &.active {
+      display: none;
+    }
+    width: 100%;
+    min-height: 84px;
+    padding-top: 18px;
+    padding-bottom: 12px;
+    margin-bottom: .2rem;
+    background-color: #fff;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .innerTitle {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    .comName {
+      display: inline-block;
+      width: 58%;
+      padding-left: 13px;
+      margin-right: 8%;
+      font-size: 15px;
+      font-weight: normal;
+      color: #1e1e1e;
+    }
+    .area-effectiveness {
+      position: absolute;
+      top: 2px;
+      font-size: 12px;
+      color: #666;
+      .areaeff-num {
+        font-size: 13px;
+        margin-left: 10px;
+      }
+    }
+  }
+  .innerCon {
+    width: 100%;
+    height: 30px;
+    .inner {
+      float: left;
+      position: relative;
+    }
+    .moneyNum, .sterNum {
+      position: absolute;
+      top:0;
+      display: inline-block;
+      height: 30px;
+      line-height: 30px;
+      font-size: 15px;
+    }
+    .innerMoney {
+      position: relative;
+      width: 53%;
+      margin-right: 11%;
+      padding-left: 13px;
+      &:after {
+        content: "";
+        position: absolute;
+        top:4px;
+        right: -1px;
+        width: 1px;
+        height: 25px;
+        background-color: #e6e9f0;
+      }
+    }
+    .innerRester {
+      width: 36%;
+    }
+    .icon {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-size: cover;
+    }
+    .iconMoney {
+      margin-right: 18px;
+      background-image: url(../images/remoney.png);
+    }
+    .iconRester {
+      margin-right: 5px;
+      background-image: url(../images/restere.png);
+    }
+  }
+}
+
+// 日历控件样式
+.toolbar.calendar-custom-toolbar {
+  .center {
+    position: relative;
+    width: 60%;
+    .iconfont {
+      display: inline-block;
+      width: 15px;
+      height: 20px;
+      color: $theBlue;
+      font-size: 18px;
+      margin: 0;
+    }
+  }
+  .link-right {
+    float: right;
+  }
+  .icon-forward {
+    float: right;
+    margin-top: 12px;
+  }
+
+  .mouthYear {
+    position: absolute;
+    left: 44px;
+    right: 44px;
+    top: 8px;
+    display: inline-block;
+    height: 44px;
+    text-align: center;
+    vertical-align: text-bottom;
+    font-size: 14px;
+  }
+  .mouth, .year {
+    display: inline-block;
+    width: 45px;
+    height: 28px;
+    line-height: 28px;
+  }
+  .mouth.active, .year.active {
+    // border: 1px solid #3393FE;
+    background-color: $theBlue;
+    color: #fff;
+  }
+  .left, .right {
+    color: $theBlue;
+  }
+}
+.navbar i.icon, .toolbar i.icon, .subnavbar i.icon {
+  display: inline-block;
+}
+.navbar a.icon-only, .toolbar a.icon-only, .subnavbar a.icon-only {
+  display: inline-block;
+  min-width: 34px;
+}
+.picker-calendar-day.picker-calendar-day-selected span {
+  background: $theBlue;
+}
+
+// 租金报表
+.revMtable {
+  .revMinner {
+    width: 100%;
+    height: 12.8rem;
+    background-color: #fff;
+  }
+  .doneChild {
+    position: relative;
+    height: 50%;
+    &:first-child {
+      border-bottom: 1px solid $grayBorder;
+    }
+  }
+  .dataName {
+    height: 1rem;
+    line-height: 1rem;
+  }
+}
+.revTable {
+  width: 100%;
+  height: 5.2rem;
+  font-size: 12px;
+  color: #1e1e1e;
+  .revble {
+    width: 100%;
+    height: 100%;
+  }
+  .revtbody {
+    padding-top: 10px;
+  }
+  .theadtr {
+    height: .65rem;
+    line-height: .65rem;
+    .thfirst {
+      width: 25% !important;
+    }
+    th {
+      width: 25% !important;
+      .thinner {
+        display: inline-block;
+        width: 90%;
+        height: 100%;
+        background-color: $graybase;
+        text-align: center;
+      }
+    }
+  }
+  .tbodytr {
+    td {
+      font-size: 15px;
+      text-align: center;
+    }
+    .tdfirst {
+      padding-left: 8px;
+      padding-right: 5px;
+      font-size: 12px !important;
+      color: #1e1e1e !important;
+      text-align: left;
+    }
+    &.trechar {
+      height: 30% !important;
+    }
+    .tablechar {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+    }
+  }
+  .trblue {
+    td {
+      color: $theBlue;
+    }
+  }
+  .trred {
+    td {
+      color: #fc3232
+    }
+  }
+}
